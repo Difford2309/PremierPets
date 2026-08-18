@@ -40,6 +40,11 @@
   .row .price{font-family:'Space Mono',monospace;font-size:15px;font-weight:700;color:var(--teal-deep);white-space:nowrap;}
   .row .price .cur{font-size:11px;font-weight:400;color:var(--ink-soft);margin-right:3px;}
   .row.highlight .price{color:var(--honey-deep);}
+  .doctor{margin-top:34px;display:flex;align-items:center;gap:18px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px;}
+  .doctor img,.doctor .avatar{width:88px;height:88px;border-radius:50%;object-fit:cover;flex-shrink:0;border:3px solid var(--bg);box-shadow:0 0 0 1px var(--line);background:#dfeae5;}
+  .doctor .name{font-family:'Fraunces',serif;font-weight:600;font-size:18px;color:var(--teal-deep);margin:0 0 2px;}
+  .doctor .role{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--honey-deep);font-weight:600;margin:0 0 6px;}
+  .doctor .bio{font-size:13px;color:var(--ink-soft);margin:0;line-height:1.5;}
   .note{margin-top:40px;background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--honey);border-radius:6px;padding:16px 18px;font-size:13.5px;color:var(--ink-soft);line-height:1.55;}
   .contact{margin-top:40px;background:var(--teal-deep);color:#eef4ee;border-radius:14px;padding:28px 24px;}
   .contact h3{font-family:'Fraunces',serif;font-size:20px;margin:0 0 14px;font-weight:600;}
@@ -72,6 +77,22 @@
   <a href="#consult">Consultations</a><a href="#vacc">Vaccinations</a><a href="#surgery">Surgery</a><a href="#dental">Dental</a><a href="#diag">Diagnostics</a><a href="#groom">Grooming &amp; Boarding</a>
 </div></nav>
 <div class="wrap">
+  <div class="doctor">
+    <svg class="avatar" viewBox="0 0 88 88" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="44" cy="44" r="44" fill="#dfeae5"/>
+      <path d="M44 14c-11 0-19 9-19 20c0 5 1.5 10 4 14l3 5h24l3-5c2.5-4 4-9 4-14c0-11-8-20-19-20z" fill="#2f4f47"/>
+      <ellipse cx="44" cy="33" rx="9" ry="11" fill="#e9c39c"/>
+      <path d="M14 80c0-17 13-30 30-30s30 13 30 30" fill="#ffffff" stroke="#173430" stroke-width="1"/>
+      <path d="M32 52 L44 64 L56 52" fill="none" stroke="#0f2a26" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M36 55 q0 12 8 12 q8 0 8 -12" fill="none" stroke="#b97e22" stroke-width="2.5" stroke-linecap="round"/>
+      <circle cx="44" cy="67" r="2.6" fill="#b97e22"/>
+    </svg>
+    <div>
+      <p class="name">Dr. [Doctor's Name]</p>
+      <p class="role">Lead Veterinarian</p>
+      <p class="bio">A short line about experience, specialty, or years of practice goes here.</p>
+    </div>
+  </div>
   <section class="cat" id="consult"><div class="cat-head"><span class="cat-num">01</span></div><h2>Consultations</h2><p class="cat-note">General check-ups and clinic visits.</p>
     <div class="row"><div><div class="name">General Consultation</div><span class="desc">Health check, weight, basic exam</span></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>100</div></div>
     <div class="row"><div><div class="name">Follow-up Visit</div><span class="desc">Within 7 days of initial visit</span></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>50</div></div>
@@ -109,6 +130,7 @@
     <div class="row"><div><div class="name">Nail Trim</div></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>30</div></div>
     <div class="row"><div><div class="name">Boarding</div><span class="desc">Per night, includes feeding</span></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>90</div></div>
   </section>
+  <div class="contact">
     <h3>Visit or call us</h3>
     <div class="grid">
       <div><b>Address</b>Street, Building — Doha, Qatar</div>
