@@ -32,6 +32,9 @@
   .cat-num{font-family:'Space Mono',monospace;font-size:12px;color:var(--honey-deep);letter-spacing:.06em;}
   h2{font-family:'Fraunces',serif;font-weight:600;font-size:24px;margin:2px 0 4px;color:var(--teal-deep);}
   .cat-note{font-size:13.5px;color:var(--ink-soft);margin:0 0 18px;}
+  .subhead{font-family:'Space Mono',monospace;font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--honey-deep);font-weight:700;margin:20px 0 2px;}
+  .subhead:first-of-type{margin-top:4px;}
+  .cat-sub-note{font-size:12px;color:var(--ink-soft);margin:0 0 8px;}
   .row{display:flex;align-items:baseline;gap:10px;padding:13px 0;border-bottom:1px dashed var(--line);}
   .row:last-child{border-bottom:none;}
   .row .name{font-size:15.5px;font-weight:500;color:var(--ink);}
@@ -68,13 +71,13 @@
 <header>
   <div class="wrap">
     <div class="eyebrow"><svg class="paw" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="15" r="4.2"/><circle cx="5" cy="9" r="2.3"/><circle cx="19" cy="9" r="2.3"/><circle cx="8.3" cy="4.8" r="2.1"/><circle cx="15.7" cy="4.8" r="2.1"/></svg>Price List</div>
-    <h1>PawCare Veterinary Clinic</h1>
+    <h1>Premier Pets Veterinary Clinic</h1>
     <p class="tag">Every price below, no surprises at the counter. Scan, browse, and ask us anything — we're happy to explain any treatment in detail.</p>
   </div>
   <svg class="paw-field" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="15" r="4.2"/><circle cx="5" cy="9" r="2.3"/><circle cx="19" cy="9" r="2.3"/><circle cx="8.3" cy="4.8" r="2.1"/><circle cx="15.7" cy="4.8" r="2.1"/></svg>
 </header>
 <nav class="cats"><div class="inner">
-  <a href="#consult">Consultations</a><a href="#vacc">Vaccinations</a><a href="#surgery">Surgery</a><a href="#dental">Dental</a><a href="#diag">Diagnostics</a><a href="#groom">Grooming &amp; Boarding</a>
+  <a href="#consult">Consultations</a><a href="#vacc">Vaccinations</a><a href="#surgery">Surgery</a><a href="#dental">Dental</a><a href="#diag">Diagnostics</a><a href="#groom">Grooming</a><a href="#board">Boarding</a>
 </div></nav>
 <div class="wrap">
   <div class="doctor">
@@ -97,6 +100,7 @@
     <div class="row"><div><div class="name">General Consultation</div><span class="desc">Health check, weight, basic exam</span></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>100</div></div>
     <div class="row"><div><div class="name">Follow-up Visit</div><span class="desc">Within 7 days of initial visit</span></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>0</div></div>
     <div class="row"><div><div class="name">Emergency Consultation</div><span class="desc">After-hours &amp; urgent cases</span></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>200</div></div>
+    <div class="row"><div><div class="name">Wood's Lamp Check</div></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>50</div></div>
   </section>
   <section class="cat" id="vacc"><div class="cat-head"><span class="cat-num">02</span></div><h2>Vaccinations</h2><p class="cat-note">Core and lifestyle vaccines for dogs and cats.</p>
     <div class="row"><div><div class="name">Tricat Vaccine</div><span class="desc">First vaccine is 3 shots — QAR 150 per shot</span></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>150</div></div>
@@ -105,19 +109,26 @@
     <div class="row"><div><div class="name">Rabies Vaccine</div></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>100</div></div>
     <div class="row"><div><div class="name">Microsporum Canis Vaccine</div></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>200</div></div>
     <div class="row"><div><div class="name">Kennel Cough Vaccine</div></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>200</div></div>
-    <div class="row"><div><div class="name">Deworming (oral)</div></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>60</div></div>
     <div class="row"><div><div class="name">Deworming up to 10kg (Tablet)</div></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>50</div></div>
   </section>
   <section class="cat" id="surgery"><div class="cat-head"><span class="cat-num">03</span></div><h2>Surgery</h2><p class="cat-note">Includes anaesthesia and post-op monitoring unless noted.</p>
-    <div class="row highlight"><div><div class="name">Spay (Female)</div><span class="desc">Cat / small dog</span></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>450</div></div>
-    <div class="row highlight"><div><div class="name">Neuter (Male)</div><span class="desc">Cat / small dog</span></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>350</div></div>
+    <div class="subhead">Cat</div>
+    <div class="row highlight"><div><div class="name">Neutering</div></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>300</div></div>
+    <div class="row highlight"><div><div class="name">Spaying</div></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>400</div></div>
+    <div class="row highlight"><div><div class="name">Cryptorchid Surgery</div></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>450</div></div>
+    <div class="subhead">Dog</div>
+    <div class="row highlight"><div><div class="name">Neutering</div><span class="desc">Up to 10kg</span></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>300</div></div>
+    <div class="row highlight"><div><div class="name">Neutering</div><span class="desc">11kg to 20kg</span></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>400</div></div>
+    <div class="row highlight"><div><div class="name">Neutering</div><span class="desc">21kg and up</span></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>500</div></div>
+    <div class="row highlight"><div><div class="name">Spaying</div><span class="desc">Up to 10kg</span></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>450</div></div>
+    <div class="row highlight"><div><div class="name">Spaying</div><span class="desc">11kg to 20kg</span></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>550</div></div>
+    <div class="row highlight"><div><div class="name">Spaying</div><span class="desc">21kg and up</span></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>650</div></div>
     <div class="row"><div><div class="name">Wound Suturing</div></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>200</div></div>
     <div class="row"><div><div class="name">Mass / Lump Removal</div><span class="desc">Price varies with size — quoted after exam</span></div><div class="leader"></div><div class="price"><span class="cur">from</span>350</div></div>
   </section>
   <section class="cat" id="dental"><div class="cat-head"><span class="cat-num">04</span></div><h2>Dental Care</h2>
-    <div class="row"><div><div class="name">Dental Check-up</div></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>50</div></div>
-    <div class="row"><div><div class="name">Scaling &amp; Polishing</div></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>300</div></div>
-    <div class="row"><div><div class="name">Tooth Extraction</div><span class="desc">Per tooth</span></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>120</div></div>
+    <div class="row"><div><div class="name">Scaling &amp; Polishing</div><span class="desc">Up to 10kg — cat and dog. +QAR 100 per kg above 10kg</span></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>450</div></div>
+    <div class="row"><div><div class="name">Tooth Extraction</div></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>90</div></div>
   </section>
   <section class="cat" id="diag"><div class="cat-head"><span class="cat-num">05</span></div><h2>Diagnostics</h2>
     <div class="row"><div><div class="name">Blood Test — Basic Panel</div></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>180</div></div>
@@ -126,11 +137,28 @@
     <div class="row"><div><div class="name">Ultrasound</div></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>300</div></div>
     <div class="row"><div><div class="name">Skin / Ear Swab Test</div></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>90</div></div>
   </section>
-  <section class="cat" id="groom"><div class="cat-head"><span class="cat-num">06</span></div><h2>Grooming &amp; Boarding</h2>
-    <div class="row"><div><div class="name">Bath &amp; Blow-dry</div><span class="desc">Small / medium / large breed</span></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>70</div></div>
-    <div class="row"><div><div class="name">Full Groom</div><span class="desc">Bath, trim, nails, ears</span></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>150</div></div>
-    <div class="row"><div><div class="name">Nail Trim</div></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>30</div></div>
-    <div class="row"><div><div class="name">Boarding</div><span class="desc">Per night, includes feeding</span></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>90</div></div>
+  <section class="cat" id="groom"><div class="cat-head"><span class="cat-num">06</span></div><h2>Grooming</h2><p class="cat-note">Cats &amp; dogs.</p>
+    <div class="subhead">Basic Grooming</div>
+    <p class="cat-sub-note">Shower, deshedding, nail trimming, private shaving, eyes/ears cleaning</p>
+    <div class="row"><div><div class="name">Basic Grooming</div><span class="desc">Up to 10kg</span></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>130</div></div>
+    <div class="row"><div><div class="name">Basic Grooming</div><span class="desc">11kg to 20kg</span></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>230</div></div>
+    <div class="row"><div><div class="name">Basic Grooming</div><span class="desc">21kg and up</span></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>330</div></div>
+    <div class="subhead">Full Grooming</div>
+    <p class="cat-sub-note">Haircut, trimming, body shaving, shower, deshedding, nail trimming, private shaving, eyes/ears cleaning</p>
+    <div class="row"><div><div class="name">Full Grooming</div><span class="desc">Up to 10kg</span></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>210</div></div>
+    <div class="row"><div><div class="name">Full Grooming</div><span class="desc">11kg to 20kg</span></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>260</div></div>
+    <div class="row"><div><div class="name">Full Grooming</div><span class="desc">21kg and up</span></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>310</div></div>
+    <div class="subhead">À la carte</div>
+    <div class="row"><div><div class="name">Nail Trimming</div></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>40</div></div>
+    <div class="row"><div><div class="name">Eyes &amp; Ears Cleaning</div></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>40</div></div>
+    <div class="row"><div><div class="name">Private Shaving</div></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>40</div></div>
+    <div class="row"><div><div class="name">Body Haircut</div></div><div class="leader"></div><div class="price"><span class="cur">from</span>100</div></div>
+  </section>
+  <section class="cat" id="board"><div class="cat-head"><span class="cat-num">07</span></div><h2>Boarding</h2><p class="cat-note">Per night, includes feeding.</p>
+    <div class="row"><div><div class="name">Cat</div></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>50</div></div>
+    <div class="row"><div><div class="name">Dog</div><span class="desc">Up to 10kg</span></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>55</div></div>
+    <div class="row"><div><div class="name">Dog</div><span class="desc">11kg to 20kg</span></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>75</div></div>
+    <div class="row"><div><div class="name">Dog</div><span class="desc">21kg and up</span></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>85</div></div>
   </section>
   <div class="contact">
     <h3>Visit or call us</h3>
@@ -151,7 +179,7 @@
     <div id="qrcode"></div>
     <div class="qr-actions"><button onclick="window.print()">Print this page</button></div>
   </div>
-  <footer>PawCare Veterinary Clinic — prices shown are indicative and may vary after in-person examination.</footer>
+  <footer>Premier Pets Veterinary Clinic — prices shown are indicative and may vary after in-person examination.</footer>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
