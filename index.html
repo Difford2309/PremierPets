@@ -28,10 +28,17 @@
   nav.cats a:hover{border-color:var(--honey-deep);color:var(--honey-deep);}
   section.cat{padding-top:44px;scroll-margin-top:70px;}
   section.cat:first-of-type{padding-top:34px;}
-  .cat-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px;}
-  .cat-num{font-family:'Space Mono',monospace;font-size:12px;color:var(--honey-deep);letter-spacing:.06em;}
+  .cat-head-row{display:flex;align-items:center;gap:14px;}
+  .cat-icon{width:42px;height:42px;border-radius:12px;background:var(--teal-deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .cat-icon svg{width:22px;height:22px;}
   h2{font-family:'Fraunces',serif;font-weight:600;font-size:24px;margin:2px 0 4px;color:var(--teal-deep);}
-  .cat-note{font-size:13.5px;color:var(--ink-soft);margin:0 0 18px;}
+  .cat-head-row h2{margin:0;}
+  .cat-note{font-size:13.5px;color:var(--ink-soft);margin:8px 0 18px;}
+  .subhead-row{display:flex;align-items:center;gap:8px;margin:20px 0 2px;}
+  .subhead-row:first-of-type{margin-top:4px;}
+  .subhead-row .subhead{margin:0;}
+  .subhead-icon{width:22px;height:22px;border-radius:7px;background:var(--teal-deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .subhead-icon svg{width:13px;height:13px;}
   .subhead{font-family:'Space Mono',monospace;font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--honey-deep);font-weight:700;margin:20px 0 2px;}
   .subhead:first-of-type{margin-top:4px;}
   .cat-sub-note{font-size:12px;color:var(--ink-soft);margin:0 0 8px;}
@@ -57,13 +64,44 @@
   .btn{flex:1;min-width:140px;text-align:center;padding:12px 14px;border-radius:8px;font-size:13.5px;font-weight:600;text-decoration:none;cursor:pointer;border:none;}
   .btn.call{background:var(--honey);color:var(--teal-deep);}
   .btn.wa{background:#2fae60;color:#fff;}
-  .qr-block{margin-top:40px;text-align:center;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:26px 20px 22px;}
-  .qr-block h3{font-family:'Fraunces',serif;font-size:18px;margin:0 0 4px;color:var(--teal-deep);}
-  .qr-block p{font-size:12.5px;color:var(--ink-soft);margin:0 0 16px;}
-  #qrcode{display:inline-flex;padding:12px;background:#fff;border-radius:10px;border:1px solid var(--line);}
-  .qr-actions{margin-top:14px;}
-  .qr-actions button{background:var(--teal-deep);color:#fff;border:none;padding:9px 16px;border-radius:100px;font-size:12.5px;font-weight:600;cursor:pointer;}
+  .qr-block{margin-top:40px;text-align:center;background:var(--paper);border:1px solid var(--line);border-radius:18px;overflow:hidden;position:relative;}
+  .qr-banner{background:linear-gradient(135deg,var(--teal-deep) 0%,#173430 100%);padding:22px 20px 46px;position:relative;overflow:hidden;}
+  .qr-banner::before{content:"";position:absolute;top:-20px;right:-20px;width:120px;height:120px;border-radius:50%;background:rgba(224,161,58,.12);}
+  .qr-banner::after{content:"";position:absolute;bottom:-30px;left:-20px;width:100px;height:100px;border-radius:50%;background:rgba(255,255,255,.05);}
+  .qr-banner-icon{width:40px;height:40px;border-radius:50%;background:var(--honey);display:inline-flex;align-items:center;justify-content:center;margin-bottom:10px;position:relative;z-index:1;}
+  .qr-banner-icon svg{width:22px;height:22px;fill:var(--teal-deep);}
+  .qr-block h3{font-family:'Fraunces',serif;font-size:19px;margin:0 0 4px;color:#fff;position:relative;z-index:1;}
+  .qr-block .qr-desc{font-size:12.5px;color:#c3d8ce;margin:0;position:relative;z-index:1;max-width:34ch;margin-left:auto;margin-right:auto;}
+  .qr-code-wrap{margin:-32px auto 0;width:200px;background:#fff;border-radius:16px;padding:16px;position:relative;z-index:2;box-shadow:0 10px 24px rgba(15,42,38,.18);}
+  .qr-code-wrap::before,.qr-code-wrap::after,.qr-code-wrap .corner-tl,.qr-code-wrap .corner-br{content:"";position:absolute;width:22px;height:22px;border-color:var(--honey);}
+  .corner-tl{top:6px;left:6px;border-top:3px solid var(--honey);border-left:3px solid var(--honey);border-radius:6px 0 0 0;}
+  .corner-tr{top:6px;right:6px;border-top:3px solid var(--honey);border-right:3px solid var(--honey);border-radius:0 6px 0 0;position:absolute;width:22px;height:22px;}
+  .corner-bl{bottom:6px;left:6px;border-bottom:3px solid var(--honey);border-left:3px solid var(--honey);border-radius:0 0 0 6px;position:absolute;width:22px;height:22px;}
+  .corner-br{bottom:6px;right:6px;border-bottom:3px solid var(--honey);border-right:3px solid var(--honey);border-radius:0 0 6px 0;}
+  #qrcode{display:inline-flex;}
+  .qr-footer{padding:18px 20px 26px;}
+  .qr-actions{margin-top:2px;}
+  .qr-actions button{background:var(--teal-deep);color:#fff;border:none;padding:11px 22px;border-radius:100px;font-size:13px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:transform .15s ease;}
+  .qr-actions button:hover{background:var(--honey-deep);}
+  .qr-actions button svg{width:15px;height:15px;fill:currentColor;}
   footer{text-align:center;font-size:11.5px;color:#8a9c93;margin-top:34px;}
+  .board-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px;}
+  @media (max-width:520px){.board-grid{grid-template-columns:1fr;}}
+  .board-card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:22px 20px;position:relative;overflow:hidden;}
+  .board-card::before{content:"";position:absolute;top:-30px;right:-30px;width:110px;height:110px;border-radius:50%;background:var(--bg);z-index:0;}
+  .board-card-inner{position:relative;z-index:1;}
+  .board-icon{width:44px;height:44px;border-radius:50%;background:var(--teal-deep);display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
+  .board-icon svg{width:24px;height:24px;fill:var(--honey);}
+  .board-card h4{font-family:'Fraunces',serif;font-weight:600;font-size:19px;color:var(--teal-deep);margin:0 0 4px;}
+  .board-card .board-sub{font-size:12px;color:var(--ink-soft);margin:0 0 16px;}
+  .board-tier{display:flex;align-items:baseline;justify-content:space-between;padding:9px 0;border-bottom:1px dashed var(--line);}
+  .board-tier:last-child{border-bottom:none;}
+  .board-tier .w{font-size:13.5px;color:var(--ink-soft);}
+  .board-tier .p{font-family:'Space Mono',monospace;font-size:16px;font-weight:700;color:var(--honey-deep);white-space:nowrap;}
+  .board-tier .p .cur{font-size:10.5px;font-weight:400;color:var(--ink-soft);margin-right:3px;}
+  .board-perks{margin-top:16px;background:var(--bg);border-radius:10px;padding:12px 14px;}
+  .board-perks p{margin:0;font-size:12px;color:var(--ink-soft);line-height:1.6;}
+  .board-perks b{color:var(--teal-deep);}
   @media print{nav.cats,.qr-actions,.contact .btn-row{display:none;}}
 </style>
 </head>
@@ -96,13 +134,13 @@
       <p class="bio">A short line about experience, specialty, or years of practice goes here.</p>
     </div>
   </div>
-  <section class="cat" id="consult"><div class="cat-head"><span class="cat-num">01</span></div><h2>Consultations</h2><p class="cat-note">General check-ups and clinic visits.</p>
+  <section class="cat" id="consult"><div class="cat-head-row"><div class="cat-icon"><svg viewBox="0 0 24 24" fill="var(--honey)"><path d="M12 2a2 2 0 0 1 2 2v6h6a2 2 0 0 1 0 4h-6v6a2 2 0 0 1-4 0v-6H4a2 2 0 0 1 0-4h6V4a2 2 0 0 1 2-2z"/></svg></div><h2>Consultations</h2></div><p class="cat-note">General check-ups and clinic visits.</p>
     <div class="row"><div><div class="name">General Consultation</div><span class="desc">Health check, weight, basic exam</span></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>100</div></div>
     <div class="row"><div><div class="name">Follow-up Visit</div><span class="desc">Within 7 days of initial visit</span></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>0</div></div>
     <div class="row"><div><div class="name">Emergency Consultation</div><span class="desc">After-hours &amp; urgent cases</span></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>200</div></div>
     <div class="row"><div><div class="name">Wood's Lamp Check</div></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>50</div></div>
   </section>
-  <section class="cat" id="vacc"><div class="cat-head"><span class="cat-num">02</span></div><h2>Vaccinations</h2><p class="cat-note">Core and lifestyle vaccines for dogs and cats.</p>
+  <section class="cat" id="vacc"><div class="cat-head-row"><div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--honey)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 2.5l3 3"/><path d="M17 4l-1.5 1.5"/><path d="M20 7l-1.5 1.5"/><path d="M16.5 5.5L20 9l-9 9-5-5z"/><path d="M9.5 14.5L4 20"/><path d="M7.5 12l2 2"/><path d="M10 9.5l2 2"/></svg></div><h2>Vaccinations</h2></div><p class="cat-note">Core and lifestyle vaccines for dogs and cats.</p>
     <div class="row"><div><div class="name">Tricat Vaccine</div><span class="desc">First vaccine is 3 shots — QAR 150 per shot</span></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>150</div></div>
     <div class="row"><div><div class="name">Dhppil Vaccine</div></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>150</div></div>
     <div class="row"><div><div class="name">Annual Booster</div></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>150</div></div>
@@ -111,7 +149,7 @@
     <div class="row"><div><div class="name">Kennel Cough Vaccine</div></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>200</div></div>
     <div class="row"><div><div class="name">Deworming up to 10kg (Tablet)</div></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>50</div></div>
   </section>
-  <section class="cat" id="surgery"><div class="cat-head"><span class="cat-num">03</span></div><h2>Surgery</h2><p class="cat-note">Includes anaesthesia and post-op monitoring unless noted.</p>
+  <section class="cat" id="surgery"><div class="cat-head-row"><div class="cat-icon"><svg viewBox="0 0 24 24" fill="var(--honey)"><circle cx="6" cy="6" r="2.6"/><circle cx="6" cy="18" r="2.6"/><path d="M8 7.5L19 17l-1.5 1.5L6.5 8.5z"/><path d="M8 16.5L19 7l-1.5-1.5L6.5 15.5z"/></svg></div><h2>Surgery</h2></div><p class="cat-note">Includes anaesthesia and post-op monitoring unless noted.</p>
     <div class="subhead">Cat</div>
     <div class="row highlight"><div><div class="name">Neutering</div></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>300</div></div>
     <div class="row highlight"><div><div class="name">Spaying</div></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>400</div></div>
@@ -126,18 +164,18 @@
     <div class="row"><div><div class="name">Wound Suturing</div></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>200</div></div>
     <div class="row"><div><div class="name">Mass / Lump Removal</div><span class="desc">Price varies with size — quoted after exam</span></div><div class="leader"></div><div class="price"><span class="cur">from</span>350</div></div>
   </section>
-  <section class="cat" id="dental"><div class="cat-head"><span class="cat-num">04</span></div><h2>Dental Care</h2>
+  <section class="cat" id="dental"><div class="cat-head-row"><div class="cat-icon"><svg viewBox="0 0 24 24" fill="var(--honey)"><path d="M12 4c-1.8 0-2.6.9-3.6.9-.9 0-1.7-.6-2.8-.3C4 5 3.2 6.5 3.4 8.3c.2 1.8.9 2.7 1.2 5 .3 2.2.7 5.7 2.1 5.7 1.3 0 1.6-2.6 2-4.3.3-1.3.8-2.1 3.3-2.1s3 .8 3.3 2.1c.4 1.7.7 4.3 2 4.3 1.4 0 1.8-3.5 2.1-5.7.3-2.3 1-3.2 1.2-5 .2-1.8-.6-3.3-2.2-3.7-1.1-.3-1.9.3-2.8.3-1 0-1.8-.9-3.6-.9z"/></svg></div><h2>Dental Care</h2></div>
     <div class="row"><div><div class="name">Scaling &amp; Polishing</div><span class="desc">Up to 10kg — cat and dog. +QAR 100 per kg above 10kg</span></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>450</div></div>
     <div class="row"><div><div class="name">Tooth Extraction</div></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>90</div></div>
   </section>
-  <section class="cat" id="diag"><div class="cat-head"><span class="cat-num">05</span></div><h2>Diagnostics</h2>
+  <section class="cat" id="diag"><div class="cat-head-row"><div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--honey)" stroke-width="2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><line x1="15.5" y1="15.5" x2="21" y2="21"/></svg></div><h2>Diagnostics</h2></div>
     <div class="row"><div><div class="name">Blood Test — Basic Panel</div></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>180</div></div>
     <div class="row"><div><div class="name">Blood Test — Full Panel</div></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>350</div></div>
     <div class="row"><div><div class="name">X-Ray (per view)</div></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>150</div></div>
     <div class="row"><div><div class="name">Ultrasound</div></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>300</div></div>
     <div class="row"><div><div class="name">Skin / Ear Swab Test</div></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>90</div></div>
   </section>
-  <section class="cat" id="groom"><div class="cat-head"><span class="cat-num">06</span></div><h2>Grooming</h2><p class="cat-note">Cats &amp; dogs.</p>
+  <section class="cat" id="groom"><div class="cat-head-row"><div class="cat-icon"><svg viewBox="0 0 24 24" fill="var(--honey)"><path d="M3 5h14v3H3z"/><rect x="3" y="8" width="1.6" height="6"/><rect x="6.2" y="8" width="1.6" height="6"/><rect x="9.4" y="8" width="1.6" height="6"/><rect x="12.6" y="8" width="1.6" height="6"/><rect x="15.8" y="8" width="1.6" height="6"/><path d="M18 6.5l3 1.5-3 1.5z"/></svg></div><h2>Grooming</h2></div><p class="cat-note">Cats &amp; dogs.</p>
     <div class="subhead">Basic Grooming</div>
     <p class="cat-sub-note">Shower, deshedding, nail trimming, private shaving, eyes/ears cleaning</p>
     <div class="row"><div><div class="name">Basic Grooming</div><span class="desc">Up to 10kg</span></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>130</div></div>
@@ -148,17 +186,53 @@
     <div class="row"><div><div class="name">Full Grooming</div><span class="desc">Up to 10kg</span></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>210</div></div>
     <div class="row"><div><div class="name">Full Grooming</div><span class="desc">11kg to 20kg</span></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>260</div></div>
     <div class="row"><div><div class="name">Full Grooming</div><span class="desc">21kg and up</span></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>310</div></div>
-    <div class="subhead">Specialized Services</div>
+    <div class="subhead-row"><div class="subhead-icon"><svg viewBox="0 0 24 24" fill="var(--honey)"><path d="M11 2c.3 3.5 1 6 2.3 7.7C14.9 11.4 17 12 20 12c-3 0-5.1.6-6.7 2.3C12 16 11.3 18.5 11 22c-.3-3.5-1-6-2.3-7.7C7.1 12.6 5 12 2 12c3 0 5.1-.6 6.7-2.3C10 8 10.7 5.5 11 2z"/></svg></div><div class="subhead">Specialized Services</div></div>
     <div class="row"><div><div class="name">Nail Trimming</div></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>40</div></div>
     <div class="row"><div><div class="name">Eyes &amp; Ears Cleaning</div></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>40</div></div>
     <div class="row"><div><div class="name">Private Shaving</div></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>40</div></div>
     <div class="row"><div><div class="name">Body Haircut</div></div><div class="leader"></div><div class="price"><span class="cur">from</span>100</div></div>
   </section>
-  <section class="cat" id="board"><div class="cat-head"><span class="cat-num">07</span></div><h2>Boarding</h2><p class="cat-note">Per night, includes feeding.</p>
-    <div class="row"><div><div class="name">Cat</div></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>50</div></div>
-    <div class="row"><div><div class="name">Dog</div><span class="desc">Up to 10kg</span></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>55</div></div>
-    <div class="row"><div><div class="name">Dog</div><span class="desc">11kg to 20kg</span></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>75</div></div>
-    <div class="row"><div><div class="name">Dog</div><span class="desc">21kg and up</span></div><div class="leader"></div><div class="price"><span class="cur">QAR</span>85</div></div>
+  <section class="cat" id="board"><div class="cat-head-row"><div class="cat-icon"><svg viewBox="0 0 24 24" fill="var(--honey)"><path d="M4 3h9v18H4zm2 2v2h2V5zm3 0v2h2V5zM6 9v2h2V9zm3 0v2h2V9zm-3 4v2h2v-2zm3 0v2h2v-2zM13 9h7v12h-7v-3h2v-2h-2v-2h2v-2h-2z"/></svg></div><h2>Boarding</h2></div><p class="cat-note">A cozy, supervised stay for your pet — priced per night.</p>
+    <div class="board-grid">
+      <div class="board-card">
+        <div class="board-card-inner">
+          <div class="board-icon"><svg viewBox="0 0 24 24">
+            <polygon fill="var(--honey)" points="5,9 7.5,2.5 9.5,9"/>
+            <polygon fill="var(--honey)" points="19,9 16.5,2.5 14.5,9"/>
+            <circle fill="var(--honey)" cx="12" cy="13.5" r="7"/>
+            <line x1="6" y1="13" x2="1" y2="12" stroke="var(--teal-deep)" stroke-width=".6"/>
+            <line x1="6" y1="14.5" x2="1" y2="14.5" stroke="var(--teal-deep)" stroke-width=".6"/>
+            <line x1="6" y1="16" x2="1" y2="17" stroke="var(--teal-deep)" stroke-width=".6"/>
+            <line x1="18" y1="13" x2="23" y2="12" stroke="var(--teal-deep)" stroke-width=".6"/>
+            <line x1="18" y1="14.5" x2="23" y2="14.5" stroke="var(--teal-deep)" stroke-width=".6"/>
+            <line x1="18" y1="16" x2="23" y2="17" stroke="var(--teal-deep)" stroke-width=".6"/>
+            <ellipse fill="var(--teal-deep)" cx="9" cy="12.5" rx="1" ry="1.3"/>
+            <ellipse fill="var(--teal-deep)" cx="15" cy="12.5" rx="1" ry="1.3"/>
+            <polygon fill="var(--teal-deep)" points="11.2,15 12.8,15 12,16"/>
+          </svg></div>
+          <h4>Cat Boarding</h4>
+          <p class="board-sub">One flat rate, every size</p>
+          <div class="board-tier"><span class="w">Per night</span><span class="p"><span class="cur">QAR</span>50</span></div>
+        </div>
+      </div>
+      <div class="board-card">
+        <div class="board-card-inner">
+          <div class="board-icon"><svg viewBox="0 0 24 24" style="transform:rotate(45deg)">
+            <circle fill="var(--honey)" cx="4.5" cy="7.5" r="2.7"/>
+            <circle fill="var(--honey)" cx="4.5" cy="16.5" r="2.7"/>
+            <circle fill="var(--honey)" cx="19.5" cy="7.5" r="2.7"/>
+            <circle fill="var(--honey)" cx="19.5" cy="16.5" r="2.7"/>
+            <rect fill="var(--honey)" x="4.5" y="9.7" width="15" height="4.6" rx="2.3"/>
+          </svg></div>
+          <h4>Dog Boarding</h4>
+          <p class="board-sub">Priced by weight</p>
+          <div class="board-tier"><span class="w">Up to 10kg</span><span class="p"><span class="cur">QAR</span>55</span></div>
+          <div class="board-tier"><span class="w">11kg – 20kg</span><span class="p"><span class="cur">QAR</span>75</span></div>
+          <div class="board-tier"><span class="w">21kg and up</span><span class="p"><span class="cur">QAR</span>85</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="board-perks"><p><b>Every stay includes:</b> royal Canin dry food, fresh water, a clean and private space, loving and attentive care, and professional supervision by our veterinarian — so you can enjoy peace of mind knowing your pet is in safe hands..</p></div>
   </section>
   <div class="contact">
     <h3>Visit or call us</h3>
@@ -174,10 +248,18 @@
     </div>
   </div>
   <div class="qr-block">
-    <h3>Scan to open this price list</h3>
-    <p>This code always points to whatever address this page is hosted at.</p>
-    <div id="qrcode"></div>
-    <div class="qr-actions"><button onclick="window.print()">Print this page</button></div>
+    <div class="qr-banner">
+      <div class="qr-banner-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="15" r="4.2"/><circle cx="5" cy="9" r="2.3"/><circle cx="19" cy="9" r="2.3"/><circle cx="8.3" cy="4.8" r="2.1"/><circle cx="15.7" cy="4.8" r="2.1"/></svg></div>
+      <h3>Scan to open this price list</h3>
+      <p class="qr-desc">This code always points to whatever address this page is hosted at.</p>
+    </div>
+    <div class="qr-code-wrap">
+      <span class="corner-tl"></span><span class="corner-tr"></span><span class="corner-bl"></span><span class="corner-br"></span>
+      <div id="qrcode"></div>
+    </div>
+    <div class="qr-footer">
+      <div class="qr-actions"><button onclick="window.print()"><svg viewBox="0 0 24 24"><path d="M6 9V2h12v7h2a2 2 0 0 1 2 2v7h-4v4H6v-4H2v-7a2 2 0 0 1 2-2zm2-2h8V4H8zm0 9v5h8v-5zm10-2a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/></svg>Print this page</button></div>
+    </div>
   </div>
   <footer>Premier Pets Veterinary Clinic — prices shown are indicative and may vary after in-person examination.</footer>
 </div>
